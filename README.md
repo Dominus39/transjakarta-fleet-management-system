@@ -34,8 +34,7 @@ Before running this application, you need to have the following installed:
 
    Example .env:
 
-   DATABASE_URL=postgres://postgres:postgres@postgres:5432/fleet?sslmode=disable
-   MQTT_BROKER=tcp://mosquitto:1883
+   DATABASE_URL=postgres://postgres:postgres@postgres:5432/fleet?sslmode=disable  MQTT_BROKER=tcp://mosquitto:1883
    MQTT_TOPIC=/fleet/vehicle/+/location
    RABBITMQ_URL=amqp://guest:guest@rabbitmq:5672/
    RABBITMQ_EXCHANGE=fleet.events
