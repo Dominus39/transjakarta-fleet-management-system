@@ -36,7 +36,7 @@ Before running this application, you need to have the following installed:
 
    DATABASE_URL=postgres://postgres:postgres@postgres:5432/fleet?sslmode=disable
    
-   MQTT_BROKER=tcp://mosquitto:1883
+   MQTT_BROKER=tcp://mosquitto:1884
    
    MQTT_TOPIC=/fleet/vehicle/+/location
    
@@ -102,20 +102,17 @@ Before running this application, you need to have the following installed:
    GET http://localhost:8080/vehicles/vehicle_363/history?start=1746250000&end=1746250904
 
    Response:
-   [
    
-     {
-   
+   [   
+     {   
        "vehicle_id": "vehicle_363",
    
        "latitude": -6.202012058733707,
    
        "longitude": 106.84643041830446,
    
-       "timestamp": 1746250904
-   
-     }
-   
+       "timestamp": 1746250904   
+     }   
    ]
    
 5. **Geofence Event (When a vehicle enters the geofence)**
