@@ -105,12 +105,9 @@ Before running this application, you need to have the following installed:
    
    [   
      {   
-       "vehicle_id": "vehicle_363",
-   
-       "latitude": -6.202012058733707,
-   
-       "longitude": 106.84643041830446,
-   
+       "vehicle_id": "vehicle_363",   
+       "latitude": -6.202012058733707,   
+       "longitude": 106.84643041830446,   
        "timestamp": 1746250904   
      }   
    ]
