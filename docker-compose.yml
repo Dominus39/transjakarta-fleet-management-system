@@ -1,0 +1,59 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    depends_on:
+      - postgres
+      - rabbitmq
+      - mosquitto
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    networks:
+      - fleet-network
+
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: fleet
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"   
+    networks:
+      - fleet-network
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"   # RabbitMQ port for communication
+      - "15672:15672" # RabbitMQ management UI
+    networks:
+      - fleet-network
+
+  mosquitto:
+    image: eclipse-mosquitto
+    ports:
+      - "1884:1884"   # MQTT port for communication
+    networks:
+      - fleet-network
+    volumes:
+    - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+    - mosquitto-data:/mosquitto/data  
+
+  publisher:
+    build:
+      context: ./mock
+    depends_on:
+      - mosquitto
+    networks:
+      - fleet-network
+      
+networks:
+  fleet-network:
+    driver: bridge
+
+volumes:
+  mosquitto-data:

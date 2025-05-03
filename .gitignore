@@ -1,0 +1,30 @@
+# Binaries
+*.exe
+*.out
+*.dll
+*.so
+
+# Build folders
+/bin/
+/vendor/
+/dist/
+
+# Go modules and cache
+/go.sum
+/go.mod
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs/editors
+.vscode/
+.idea/
+*.swp
+
+# Env and secrets
+.env
+.env.*

@@ -1,0 +1,62 @@
+{
+	"info": {
+		"_postman_id": "4c98e224-5f78-4a2f-a3e3-5cb97bc01f86",
+		"name": "Transjakarta Test Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36023087"
+	},
+	"item": [
+		{
+			"name": "get_latest_location",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vehicles/{{vehicle_id}}/location\nn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vehicles",
+						"{{vehicle_id}}",
+						"location\nn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_history",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vehicles/{{vehicle_id}}/history?start=1746250000&end=1746250904",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vehicles",
+						"{{vehicle_id}}",
+						"history"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "1746250000"
+						},
+						{
+							"key": "end",
+							"value": "1746250904"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
