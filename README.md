@@ -34,7 +34,8 @@ Before running this application, you need to have the following installed:
 
    Example .env:
 
-   DATABASE_URL=postgres://postgres:postgres@postgres:5432/fleet?sslmode=disable  MQTT_BROKER=tcp://mosquitto:1883
+   DATABASE_URL=postgres://postgres:postgres@postgres:5432/fleet?sslmode=disable
+   MQTT_BROKER=tcp://mosquitto:1883
    MQTT_TOPIC=/fleet/vehicle/+/location
    RABBITMQ_URL=amqp://guest:guest@rabbitmq:5672/
    RABBITMQ_EXCHANGE=fleet.events
@@ -43,14 +44,14 @@ Before running this application, you need to have the following installed:
    GEOFENCE_LON=106.8456
    GEOFENCE_RADIUS=50
  
-3. **Docker Setup:**
+4. **Docker Setup:**
 
     Run the following command to build and start the services using Docker Compose:
 
-    *docker-compose up --build*
+    docker-compose up --build
    This will start the PostgreSQL database, RabbitMQ, and your Go application inside Docker containers.
 
-5. **Start the application locally:**
+6. **Start the application locally:**
 
    If you prefer not to use Docker, you can run the application locally with:
 
