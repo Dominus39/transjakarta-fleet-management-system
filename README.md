@@ -49,7 +49,7 @@ Before running this application, you need to have the following installed:
     Run the following command to build and start the services using Docker Compose:
 
     docker-compose up --build
-    This will start the PostgreSQL database, RabbitMQ, and your Go application inside Docker containers.
+   This will start the PostgreSQL database, RabbitMQ, and your Go application inside Docker containers.
 
 5. **Start the application locally:**
 
