@@ -51,7 +51,7 @@ Before running this application, you need to have the following installed:
     docker-compose up --build
     This will start the PostgreSQL database, RabbitMQ, and your Go application inside Docker containers.
 
-4. **Start the application locally:**
+5. **Start the application locally:**
 
    If you prefer not to use Docker, you can run the application locally with:
 
