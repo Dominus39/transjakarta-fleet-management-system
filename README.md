@@ -35,13 +35,21 @@ Before running this application, you need to have the following installed:
    Example .env:
 
    DATABASE_URL=postgres://postgres:postgres@postgres:5432/fleet?sslmode=disable
+   
    MQTT_BROKER=tcp://mosquitto:1883
+   
    MQTT_TOPIC=/fleet/vehicle/+/location
+   
    RABBITMQ_URL=amqp://guest:guest@rabbitmq:5672/
+   
    RABBITMQ_EXCHANGE=fleet.events
+   
    RABBITMQ_QUEUE=geofence_alerts
+   
    GEOFENCE_LAT=-6.2088
+   
    GEOFENCE_LON=106.8456
+   
    GEOFENCE_RADIUS=50
  
 4. **Docker Setup:**
@@ -57,6 +65,7 @@ Before running this application, you need to have the following installed:
    If you prefer not to use Docker, you can run the application locally with:
 
    *go run main.go*
+   
    This will start the server on the port defined in your .env file (default is 8080).
 
 ## API Endpoints
@@ -70,14 +79,20 @@ Before running this application, you need to have the following installed:
    GET http://localhost:8080/vehicles/vehicle_363/location
    
    Response:
+   
    {
+   
      "vehicle_id": "vehicle_363",
+   
      "latitude": -6.202012058733707,
+   
      "longitude": 106.84643041830446,
+   
      "timestamp": 1746250904
+   
    }
    
-2. **Get Vehicle Location History**
+3. **Get Vehicle Location History**
    GET /vehicles/:vehicle_id/history
 
    Retrieves the location history for the specified vehicle between a start and end timestamp.
@@ -88,15 +103,22 @@ Before running this application, you need to have the following installed:
 
    Response:
    [
+   
      {
+   
        "vehicle_id": "vehicle_363",
+   
        "latitude": -6.202012058733707,
+   
        "longitude": 106.84643041830446,
+   
        "timestamp": 1746250904
+   
      }
+   
    ]
    
-3. **Geofence Event (When a vehicle enters the geofence)**
+5. **Geofence Event (When a vehicle enters the geofence)**
    Event: A message is sent to RabbitMQ when a vehicle enters the geofence area.
 
    Example: If a vehicle enters the geofence area (defined by the latitude, longitude, and radius), a RabbitMQ message is published.
